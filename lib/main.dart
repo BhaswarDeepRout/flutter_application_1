@@ -54,46 +54,49 @@ class LoginScreen extends StatelessWidget {
               ),
               SizedBox(height: 20),
               Image.asset("assets/Screenshot (609).png", height: 150),
-              SizedBox(height: 30),
-              TextFormField(
-                controller: _usernameController,
-                decoration: InputDecoration(
-                  labelText: "Username",
-                  hintText: "Enter your username",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15.0),
+              Container(
+                margin: EdgeInsets.all(20),
+                child: TextFormField(
+                  controller: _usernameController,
+                  decoration: InputDecoration(
+                    labelText: "Username",
+                    hintText: "Enter your username",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
                   ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Please enter username";
+                    }
+                    final regex = RegExp(r'^[a-zA-Z0-9]+$');
+                    if (!regex.hasMatch(value)) {
+                      return "Only letters and numbers allowed";
+                    }
+                    return null;
+                  },
                 ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return "Please enter username";
-                  }
-                  final regex = RegExp(r'^[a-zA-Z0-9]+$');
-                  if (!regex.hasMatch(value)) {
-                    return "Only letters and numbers allowed";
-                  }
-                  return null;
-                },
               ),
-              SizedBox(height: 20),
-              TextFormField(
-                controller: _passwordController,
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: "Password",
-                  hintText: "Enter your password",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15.0),
+              Container(
+                margin: EdgeInsets.all(20),
+                child: TextFormField(
+                  controller: _passwordController,
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    labelText: "Password",
+                    hintText: "Enter your password",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
                   ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Please enter password";
+                    }
+                    return null;
+                  },
                 ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return "Please enter password";
-                  }
-                  return null;
-                },
               ),
-              SizedBox(height: 40),
               SizedBox(
                 width: 100,
                 child: ElevatedButton(
