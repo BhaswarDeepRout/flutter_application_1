@@ -46,14 +46,18 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: 20),
-              Text(
-                "KRS Classes",
-                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
+              Container(
+                margin: EdgeInsets.all(20),
+                child: Text(
+                  "KRS Classes",
+                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
               ),
-              SizedBox(height: 20),
-              Image.asset("assets/Screenshot (609).png", height: 150),
+              Container(
+                margin: EdgeInsets.all(20),
+                child: Image.asset("assets/Screenshot (609).png", height: 150),
+              ),
               Container(
                 margin: EdgeInsets.all(20),
                 child: TextFormField(
