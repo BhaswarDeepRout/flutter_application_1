@@ -32,8 +32,11 @@ class LoginScreen extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.info_outline),
             onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text("Login Info Icon Pressed")),
+              showAboutDialog(
+                context: context,
+                applicationName: "Login App",
+                applicationVersion: "1.0.0",
+                applicationLegalese: "KRS Classes 2025",
               );
             },
           ),
