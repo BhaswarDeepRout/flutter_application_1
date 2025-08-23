@@ -56,7 +56,7 @@ class LoginScreen extends StatelessWidget {
               ),
               Container(
                 margin: EdgeInsets.all(20),
-                child: Image.asset("assets/Screenshot (609).png", height: 150),
+                child: Image.asset("assets/Screenshot (609).png", height: 200),
               ),
               Container(
                 margin: EdgeInsets.all(20),
